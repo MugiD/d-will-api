@@ -1,21 +1,21 @@
-from array import array
-from xmlrpc.client import boolean
 from pydantic import BaseModel
 from enum import Enum
-from typing import Optional
+from typing import Optional, List
 
 class Gender(str, Enum):
-    male = "male"
-    female = "female"
+    male = "Male"
+    female = "Female"
 
 class Role(str, Enum):
-    pirate = "pirate"   
-    marine = "marine" 
+    pirate = "Pirate"   
+    marine = "Marine"
+    revolutinary="Revolutinary"
+    unknown="Unknown"
 
 class Status(str, Enum):
-    alive = "alive"
-    dead = "dead"
-    unknown = "unknown"
+    alive = "Alive"
+    dead = "Dead"
+    unknown = "Unknown"
 
 class OnePiece(BaseModel):
     image: str
@@ -24,7 +24,8 @@ class OnePiece(BaseModel):
     gender: Gender
     role: Role
     race: str
-    fruit: Optional[str]
-    fruit_image: Optional[str]
-    status: Optional[Status]
+    origin: str
+    fruit: Optional[List]
+    fruit_image: Optional[List]
+    status: Status
 
