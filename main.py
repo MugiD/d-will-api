@@ -122,6 +122,6 @@ db: List[OnePiece] = [
 ]
 
 
-@app.get("/")
+@app.get("/api/will-of-d/")
 async def willOfD():
     return db
